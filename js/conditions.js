@@ -1,5 +1,7 @@
 // Whats a Condition?
 
+// A condition is an expression that evaluates whether something is true or false. When the value of a condition is true, we say that this condition is satisfied.
+
 // Sometimes we need to perform different actions based on a condition.
 
 // There is the if statement for that and also the conditional (ternary) operator for conditional evaluation which we will be referring as the “question mark” operator ? for simplicity.
