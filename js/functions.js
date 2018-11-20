@@ -31,3 +31,25 @@ function greetingUser () {
 console.log("Start of a program");
 greetingUser();
 console.log("End of program");
+
+// The keyword "return" indicates that a return value will be given, which is specified immediately after the word.
+
+function sayHello() {
+    return "Hello!";
+}
+
+console.log("Start of program");
+let result = sayHello();
+console.log(result);
+console.log("End of program");
+
+// Declare myFunction
+function myFunction() {
+    // Calculate return value
+    //  ..
+    return returnValue;
+}
+
+// Get return value from myFunction
+var value = myFunction();
+// ..
