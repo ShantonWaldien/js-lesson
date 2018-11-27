@@ -60,3 +60,41 @@ console.log(cake.describe());
 
 // We ceated an object named pastry, which brings together the properties common to all the characters. The cake and muffin are created via Pastry as a prototype which delegates its features to them.
 
+// The process of creating a Pastry is a little repetitive: for each character , you must sucessfully give a vlue to each of its properties. You can do better by creating an initialization function.
+
+var Pastry = {
+
+    // initialize the pastry
+
+    init: function(type, flavor, layers, price, occasion) {
+        this.type = type;
+        this.flavor = flavor;
+        this.layers = layers;
+        this.price = price;
+        this.occasion = occasion;
+    },
+
+    // Describe the pastry
+
+    describe: function() {
+        var description = "The " + this.type + " is a " + this.occasion + " pastry, has a " + this.flavor + " flavor, " + this.layers + " layer(s), and costs " + this.price + ".";
+        return description;
+    }
+};
+
+
+var muffin = Object.create(Pastry);
+muffin.init("muffin", "blueberry", 1, "R20", "breakfast");
+
+var cake = Object.create(Pastry);
+cake.init("cake", "vanilla", 3, "R310", "birthday");
+
+console.log(muffin.describe());
+console.log(cake.describe());
+
+// The method init() takes the initial property values of the pastry as parameters. The pastry creation code is therefore reduced to only 2 steps: 
+
+// The actual creation , with the pastry object as a prototype.
+
+
+
