@@ -22,15 +22,46 @@
             color: white; 
             padding: 20px;
         }
+
+        .invalid {
+            border-color: red; 
+        }
+
+        .valid {
+            border-bottom-color: green;
+        }
     </style>
 </head>
 <body>
+
+    <form>
+
+        <div class="form-group">
+            <label for="password-input">Password</label>
+            <input type="password" id="password-input" class="form-control">
+            <small>Please enter a password between 6 and 12 characters.</small>
+        </div>
+
+        <div class="form-group">
+
+            <label for="confirm-input">Confirm Password</label>
+            <input type="password" id="confirm-password" required>
+
+        </div>
+
+        <small style="display: none" id="error-message">Both password fields must match</small>
+        <button type="submit" id="submit-button" disabled="true">Submit</button>
+        
+    </form>
+
+
+    
 
     <!-- <p id="demo"></p>
 
     <h1 id="hi"></h1> -->
 
-    <p id="text">The HTML DOM is a standard object model and programming interface for HTML. It defines:
+    <!-- <p id="text">The HTML DOM is a standard object model and programming interface for HTML. It defines:
 
         The HTML elements as objects
         The properties of all HTML elements
@@ -47,7 +78,7 @@
     <button type="button" onClick="refreshPage()">Refresh</button>
 
     <button onmouseover="displayDate()">What is the time?</button>
-    <p id="date"></p>
+    <p id="date"></p> -->
 
     <!-- <script src="js/main.js">
     </script> -->
@@ -55,7 +86,8 @@
     <!-- <script src="js/objects-and-prototypes.js"></script>
     <script src="js/challenge.js"></script> -->
     <!-- <script src="js/manipulating-the-dom.js"></script> -->
-    <script src="js/dom.js"></script>
+    <!-- <script src="js/dom.js"></script> -->
+    <script src="js/form-handling.js"></script>
     <!-- <script src="js/conditions.js">
     </script> -->
     <!-- <script src="js/loops.js">
