@@ -34,27 +34,16 @@
 </head>
 <body>
 
-    <form>
+    <label for="password-input">Password</label>
+    <input name="password" type="password" placeholder="Password"  id="password-input" onkeyup="checkPass(); return false;" />
 
-        <div class="form-group">
-            <label for="password-input">Password</label>
-            <input type="password" id="password-input" class="form-control">
-            <small>Please enter a password between 6 and 12 characters.</small>
-        </div>
+    <br>
 
-        <div class="form-group">
-
-            <label for="confirm-input">Confirm Password</label>
-            <input type="password" id="confirm-password" required>
-
-        </div>
-
-        <small style="display: none" id="error-message">Both password fields must match</small>
-        <button type="submit" id="submit-button" disabled="true">Submit</button>
-        
-    </form>
-
-
+    <label for="confirm-password">Confirm Password</label>
+    <input name="repeatpassword" type="password" placeholder="Confirm Password" id="confirm-password" onkeyup="checkPass(); return false;" />
+    <div id="error"></div>
+    
+    <button type="submit" id="submit-button" disabled="true">Submit</button>
     
 
     <!-- <p id="demo"></p>

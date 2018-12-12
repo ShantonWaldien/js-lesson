@@ -45,3 +45,58 @@ confirmPassword.addEventListener('blur', () => {
         errorMsg.style.display = "inline";
     }
 });
+
+function checkPass()
+{
+    var password = document.getElementById('password-input');
+    var password2 = document.getElementById('confirm-password');
+    var message = document.getElementById('error');
+    var goodColor = "#66cc66";
+    var badColor = "#ff6666";
+ 	
+    if(password.value.length > 5)
+    {
+        password.style.backgroundColor = goodColor;
+        message.style.color = goodColor;
+        message.innerHTML = "Password length okay!"
+    }
+    else {
+        password.style.backgroundColor = badColor;
+        message.style.color = badColor;
+        message.innerHTML = "Password must contain 6 characters"
+        return;
+    }
+  
+    if(password.value == password2.value)
+    {
+        password2.style.backgroundColor = goodColor;
+        message.style.color = goodColor;
+        message.innerHTML = "Passwords match!"
+        alert('Passwords Match!')
+    }
+	else {
+        password2.style.backgroundColor = badColor;
+        message.style.color = badColor;
+        message.innerHTML = " These passwords don't match"
+    }
+    any = /[0-9]/;
+    if(!any.test(password.value)) {
+        message.innerHTML = " Error: password must contain at least number (0-9)!"
+        return false;
+    }
+    any = /[a-z]/;
+    if(!any.test(password.value)) {
+        message.innerHTML = " Error: password must contain at least one lowercase letter (a-z)!"
+        return false;
+    }
+    any = /[A-Z]/;
+    if(!any.test(password.value)) {
+        message.innerHTML = " Error: password must contain at least one uppercase letter (A-Z)!"
+        return false;
+    }
+    any = /[@&!]/;
+	if(!any.test(password.value)) {
+	    message.innerHTML = " Error: password must contain at least one special character (@-!)!"
+	    return false;
+	} 
+} 
