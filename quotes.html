@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Chuck Norris</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- jQuery -->
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+</head>
+<style>
+    .col-md {
+        padding: 50px;
+
+    }
+</style>
+<body>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md bg-dark text-light">
+                
+                <button><a href="" id="button">Get a New Quote</a></button>
+                <p><a href="" id="url">Link to quote</a></p>
+
+            </div>
+            <div class="col-md bg-dark text-light">
+
+                <img src="" alt="" id="icon">
+                <p id="quote"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+            function newQuote() {
+                //the url we are making a request to
+                var url = "https://api.chucknorris.io/jokes/random?category=dev";
+
+                $.ajax({
+                    url: url,
+                    method: 'get',
+                    success: function (data) {
+                        //do something when call is successful
+                        console.log(data);
+                        $('#quote').text(data.value);
+                        $('#url').attr('href', data.url);
+                        $('#icon').attr('src', data.icon_url);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+            }
+
+            $(document).ready(function () {
+                newQuote();
+                $('button').on('click', newQuote());
+            });
+</script>
+</body>
+</html>
