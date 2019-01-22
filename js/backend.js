@@ -13,3 +13,16 @@
     // JSON, or JavaScript Object Notation is a way of representing and handling data as a JavaScript object. It is extremely useful for sending and recieving information
 
 
+
+
+
+    // Task for today 
+    // Using numbersapi.com/#42 to fetch data on click of a button displayed to a user in a friendly way.
+    // Use an ajax request to fetch and display a random number between 0 & 9999
+    // Create an input where a user can enter a nymber between 0 & 9999 and a button to submit the number with validation
+    // Once clicks on the button, user should be able to receive a fun fact about the number on the frontend (create a function that gets bound to your button to perform this repetitive task).
+
+    // Outcomes
+    // understand the usage of the ajax function
+    // know how to make an api reuqest using an ajax function
+    // using a function to perform a reptitive task
