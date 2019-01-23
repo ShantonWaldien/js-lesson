@@ -21,6 +21,10 @@
         font-size: 20px;
         margin: 20px;
     }
+
+    .card-deck {
+        padding: 30px;
+    }
 </style>
 <body>
 
@@ -55,7 +59,7 @@
       </div>
       <div class="card-body">
         <h1 class="card-title pricing-card-title" id="number"></h1>
-        <button type="button" class="btn btn-lg btn-block btn-outline-primary"><a href="" id="no42">Get Fact</a></button>
+        <button class="btn btn-lg btn-block btn-outline-primary"><a href="" id="no42">Get Fact</a></button>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
@@ -64,77 +68,78 @@
       </div>
       <div class="card-body">
         <h1 class="card-title pricing-card-title" id="random"></h1>
-        <button class="btn btn-lg btn-block btn-outline-primary"> <a href="" id="num">Get Random</a></button>
+        <button class="btn btn-lg btn-block btn-outline-primary"> <a href="" id="num">Get Random Fact</a></button>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Enter a number</h4>
+        <h4 class="my-0 font-weight-normal">Enter a number <br> 0 - 9999</h4>
       </div>
       <div class="card-body">
-        <input type="text">
-        <button type="button" class="btn btn-lg btn-block btn-outline-primary"> <a href="" id="input">Get Fact</a></button>
+        <input type="number" value="0" style="margin: 10px 0 10px 0;">
+        <h1 class="card-title pricing-card-title" id="inputNumber"></h1>
+        <button type="button" class="btn btn-lg btn-block btn-outline-primary"> <a href="" id="input" onclick="inputNumber()">Get Fact</a></button>
       </div>
     </div>
   </div>
 
 
 
-
-
-
-
 <script>
 
-    function newNumber() {
-        //the url we are making a request to
-        var url = "http://numbersapi.com/42";
+    // function newNumber() {
+    //     //the url we are making a request to
+    //     var url = "http://numbersapi.com/42";
 
-        $.ajax({
-            url: url,
-            method: 'get',
-            success: function (data) {
-            //do something when call is successful
-                console.log(data);
-                    $('#number').text(data);
-                },
-                error: function (error) {
-                    console.log(error);
-                }
-            });
-        }
+    //     $.ajax({
+    //         url: url,
+    //         method: 'get',
+    //         success: function (data) {
+    //         //do something when call is successful
+    //             console.log(data);
+    //                 $('#number').text(data);
+    //             },
+    //             error: function (error) {
+    //                 console.log(error);
+    //             }
+    //         });
+    //     }
 
-        $(document).ready(function () {
-        newNumber();
-        $('no42').on('click', newNumber());
-    });
+    //     $(document).ready(function () {
+    //     newNumber();
+    //     $('no42').on('dblclick', newNumber());
+    // });
 
-    function randomNumber() {
-        //the url we are making a request to
-        var url = "http://numbersapi.com/random/";
+    // function randomNumber() {
+    //     //the url we are making a request to
+    //     var url = "http://numbersapi.com/random/";
 
-        $.ajax({
-            url: url,
-            method: 'get',
-            success: function (data) {
-            //do something when call is successful
-                console.log(data);
-                    $('#random').text(data);
-                },
-                error: function (error) {
-                    console.log(error);
-                }
-            });
-        }
+    //     $.ajax({
+    //         url: url,
+    //         method: 'get',
+    //         success: function (data) {
+    //         //do something when call is successful
+    //             console.log(data);
+    //                 $('#random').text(data);
+    //             },
+    //             error: function (error) {
+    //                 console.log(error);
+    //             }
+    //         });
+    //     }
 
-        $(document).ready(function () {
-        randomNumber();
-        $('num').on('click', randomNumber());
-    });
+    //     $(document).ready(function () {
+    //     randomNumber();
+    //     $('num').on('click', randomNumber());
+    // });
+
+    // Input Function
+
+    
 
     function inputNumber() {
         //the url we are making a request to
-        var url = "http://numbersapi.com";
+        var url = "http://numbersapi.com/math?callback=";
 
         $.ajax({
             url: url,
@@ -142,7 +147,7 @@
             success: function (data) {
             //do something when call is successful
                 console.log(data);
-                    $('#random').text(data);
+                    $('#inputNum').text(data);
                 },
                 error: function (error) {
                     console.log(error);
